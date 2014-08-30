@@ -34,8 +34,8 @@
 		DA8A9BA419B21A6D0029BFBB /* Swift_TechTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift_TechTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8A9BA919B21A6D0029BFBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA8A9BAA19B21A6D0029BFBB /* Swift_TechTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_TechTalkTests.swift; sourceTree = "<group>"; };
-		DA8A9BB519B21D5B0029BFBB /* Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Functions.playground; sourceTree = "<group>"; };
-		DA8A9BB619B21D5B0029BFBB /* Variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Variables.playground; sourceTree = "<group>"; };
+		DA8A9BB519B21D5B0029BFBB /* Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Functions.playground; path = Playgrounds/Functions.playground; sourceTree = "<group>"; };
+		DA8A9BB619B21D5B0029BFBB /* Variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Variables.playground; path = Playgrounds/Variables.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
