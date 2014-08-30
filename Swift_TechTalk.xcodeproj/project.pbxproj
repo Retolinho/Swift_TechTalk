@@ -25,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA1593DE19B225CA0097F867 /* StringInterpolation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = StringInterpolation.playground; path = Playgrounds/StringInterpolation.playground; sourceTree = "<group>"; };
+		DA1593DF19B225D00097F867 /* Tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Tuples.playground; path = Playgrounds/Tuples.playground; sourceTree = "<group>"; };
 		DA8A9B9219B21A6D0029BFBB /* Swift_TechTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_TechTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8A9B9619B21A6D0029BFBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA8A9B9719B21A6D0029BFBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,8 @@
 		DA8A9BB419B21D3F0029BFBB /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				DA1593DF19B225D00097F867 /* Tuples.playground */,
+				DA1593DE19B225CA0097F867 /* StringInterpolation.playground */,
 				DA8A9BB519B21D5B0029BFBB /* Functions.playground */,
 				DA8A9BB619B21D5B0029BFBB /* Variables.playground */,
 			);

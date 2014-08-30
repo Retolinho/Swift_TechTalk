@@ -2,77 +2,81 @@
 
 import UIKit
 
-// 1: Start with a Hello World (and a more advanced one)
+//Thema: Variablen, Konstanten
+//Unterthemen: Typinferenz, statische Typisierung, Optionals
+
+// 1: Ein kleines Hello World zur Demonstration von Playground und aus Tradition
 println("Hello world")
-println("We have \(55*60) seconds left")
 
-// 2: Type inference and strong typing
-    // 2.1: var declaration and type inference
+// Einschub: coole utf8 constanten/variablen declarationen
+let 🐶 = "hello"
 let π = 3.14
+
+// 2: Statische Typisierung
+var aString: String = "Hello world"
+//aString = 7 -> kann nicht zugewiesen werden
+
+// 3: Typinferenz
 var myString = "some text"
-//myString = 7
+//myString = 7 -> myString wird implizit als String definiert
 
-    // 2.2: type inference and explicit type
-//var myVar = 6
-//myVar = 8.7
+    // 2.2: Typinferenz kann und muss manchmal übersteuert werden
+var typeInfered = 6 // -> int
+typeInfered = 8.7
 
-var myVar: Float = 6
+var myVar: Float = 6 // -> wenn ich Float will muss ich ihn angeben
 myVar = 7.8
 
-    //2.3: type inference with arrays and dicts
-var myArray = [5, 6]
+    //2.3: Typinferenz am Beispiel von Arrays und Dictionaries
+var myArray = [5, 6] // -> Array von ints
 //myArray.append("Hello")
 myArray.append(7)
 
-//var myDoubleArray = [Double]()
+    //leerer Array muss mit Typ angegeben werden
 var myDoubleArray: [Double] = []
 myDoubleArray.append(7.6)
 
-var firstObject = myDoubleArray[0]
-//firstObject = "String"
+var firstObject = myDoubleArray[0] // -> first Object ist infered als Double
+//firstObject = "String" // -> kann kein String zugewiesen werden
 
+    //konstanter array/dict ist immutable
 let myImmutableArray = ["First", "Second"]
 //myImmutableArray.append("Third")
-//myImmutableArray[0] = "Whatever"
+//myImmutableArray[0] = "Whatever" //-> das würde zB in Java klappen
 
+    //kurz zum playground zeigen -> rechts 2 times erklären
 for value in myImmutableArray {
     println(value)
 }
 
-var myFirstDict = [0.5:"First", 1.3: "Second"]
-var secondValue = myFirstDict[1.3]
-//secondValue = 6
-
-for (key, value) in myFirstDict {
-    println("\(key): \(value)")
-}
-
 // 3. Optionals
 var anotherString: String = "test"
-//anotherString = nil
+//anotherString = nil // -> nil (null) kann nicht zugewiesen werden bei nicht optional
+//Diskussion: null opt-in statt opt-out bei Java (@NonNull) und enforced by compiler!!!
 
-//nil in swift is absence of value -> all types
+//Nil ist in Swift "absence of value" kein spezieller Typ -> geht für alle Typen (auch primitive)
 var nullableString: String? = nil
-var nullableInt: Int? = nil
+var nullableInt: Int? = nil // -> int i = null ist nicht möglich in java, fehlerfall nicht signalisierbar (zB ErrorCode)
 nullableString = "test"
 
     // 3.1 explicit unwrapping
-//nullableString.isEmpty
+//nullableString.isEmpty // -> auf optional kann methode oder member nicht aufgerufen werden
+//da sprache statisch typisiert ist weiss Compiler nicht ob nil/nicht nil, nur dass optional
 if nullableString != nil {
     nullableString!.isEmpty
 }
 
-    // 3.2. optional binding
+    // 3.2. optional binding als Pattern
 if let mySafeString = nullableString {
-    mySafeString.isEmpty
+    mySafeString.isEmpty // -> mySafeString ist kein Optional, kann normal benutzt werden
 }
 
     //3.3 sophisticated example
 let anyString = "xy"
-//intAsString is infered as optional Int
-var intAsString = anyString.toInt()
+var intAsString = anyString.toInt() // ->is infered as optional Int, da toInt Optional returniert
 if let myInt = intAsString {
     println("Sum = \(myInt + 3)")
 }
+// anyString zu 4 wechseln
 
 
