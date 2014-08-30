@@ -34,6 +34,8 @@
 		DA8A9BA419B21A6D0029BFBB /* Swift_TechTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift_TechTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8A9BA919B21A6D0029BFBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA8A9BAA19B21A6D0029BFBB /* Swift_TechTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_TechTalkTests.swift; sourceTree = "<group>"; };
+		DA8A9BB519B21D5B0029BFBB /* Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Functions.playground; sourceTree = "<group>"; };
+		DA8A9BB619B21D5B0029BFBB /* Variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Variables.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		DA8A9B8919B21A6D0029BFBB = {
 			isa = PBXGroup;
 			children = (
+				DA8A9BB419B21D3F0029BFBB /* Playgrounds */,
 				DA8A9B9419B21A6D0029BFBB /* Swift_TechTalk */,
 				DA8A9BA719B21A6D0029BFBB /* Swift_TechTalkTests */,
 				DA8A9B9319B21A6D0029BFBB /* Products */,
@@ -107,6 +110,15 @@
 				DA8A9BA919B21A6D0029BFBB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA8A9BB419B21D3F0029BFBB /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				DA8A9BB519B21D5B0029BFBB /* Functions.playground */,
+				DA8A9BB619B21D5B0029BFBB /* Variables.playground */,
+			);
+			name = Playgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +409,7 @@
 				DA8A9BB019B21A6D0029BFBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA8A9BB119B21A6D0029BFBB /* Build configuration list for PBXNativeTarget "Swift_TechTalkTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +418,7 @@
 				DA8A9BB319B21A6D0029BFBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
