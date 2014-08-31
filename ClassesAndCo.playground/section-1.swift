@@ -112,4 +112,5 @@ dog.dogAge
 Fragen:
 - Gibt es klassen variables?
 - Konstrukte, die ich nicht erwaehne: lazy, weak
+- Modifiers fuer Klassen, Properties, Methoden: public, internal, private
 */
