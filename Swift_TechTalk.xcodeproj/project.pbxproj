@@ -25,6 +25,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43EC091719B22535001DA291 /* StringInterpolation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = StringInterpolation.playground; path = Playgrounds/StringInterpolation.playground; sourceTree = "<group>"; };
+		43EC091819B22535001DA291 /* Tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Tuples.playground; path = Playgrounds/Tuples.playground; sourceTree = "<group>"; };
+		43FD783419B3294C00C8B804 /* ClassesAndCo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ClassesAndCo.playground; sourceTree = "<group>"; };
 		DA8A9B9219B21A6D0029BFBB /* Swift_TechTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_TechTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8A9B9619B21A6D0029BFBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA8A9B9719B21A6D0029BFBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,8 +118,11 @@
 		DA8A9BB419B21D3F0029BFBB /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				43EC091719B22535001DA291 /* StringInterpolation.playground */,
+				43EC091819B22535001DA291 /* Tuples.playground */,
 				DA8A9BB519B21D5B0029BFBB /* Functions.playground */,
 				DA8A9BB619B21D5B0029BFBB /* Variables.playground */,
+				43FD783419B3294C00C8B804 /* ClassesAndCo.playground */,
 			);
 			name = Playgrounds;
 			sourceTree = "<group>";
