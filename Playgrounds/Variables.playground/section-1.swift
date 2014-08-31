@@ -33,7 +33,7 @@ var myArray = [5, 6] // -> Array von ints
 myArray.append(7)
 
     //leerer Array muss mit Typ angegeben werden
-var myDoubleArray: [Double] = []
+var myDoubleArray: [Double] = [] // oder myDoubleArray = [Double]()
 myDoubleArray.append(7.6)
 
 var firstObject = myDoubleArray[0] // -> first Object ist infered als Double
@@ -55,6 +55,11 @@ var anotherString: String = "test"
 //Diskussion: null opt-in statt opt-out bei Java (@NonNull) und enforced by compiler!!!
 
 //Nil ist in Swift "absence of value" kein spezieller Typ -> geht für alle Typen (auch primitive)
+//enum Optional {
+//  case None
+//  case Some(T)
+//}
+
 var nullableString: String? = nil
 var nullableInt: Int? = nil // -> int i = null ist nicht möglich in java, fehlerfall nicht signalisierbar (zB ErrorCode)
 nullableString = "test"
@@ -71,7 +76,7 @@ if let mySafeString = nullableString {
     mySafeString.isEmpty // -> mySafeString ist kein Optional, kann normal benutzt werden
 }
 
-    //3.3 sophisticated example
+    //3.3 realistisches beispiel
 let anyString = "xy"
 var intAsString = anyString.toInt() // ->is infered as optional Int, da toInt Optional returniert
 if let myInt = intAsString {
@@ -79,4 +84,7 @@ if let myInt = intAsString {
 }
 // anyString zu 4 wechseln
 
+//theorie: optionals sind cool, schwer ist zur Zeit noch die Arbeit mit Cocoa Libraries.
+//hier werden noch zu oft optionals returniert -> dann wird es witzlos
+// apple ist aber dran mit jeder beta dies besser anzupassen
 

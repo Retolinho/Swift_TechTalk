@@ -2,57 +2,56 @@
 
 import UIKit
 
-//optionals as return values
-func anyReturnValue() -> String? {
-    return nil
+// 1 einfache funktion um syntax zu sehen
+func simpleEchoFunction(input: String) -> String {
+    return input
 }
 
-// function params are const -> keine Nebeneffekte!
-func testConst(string: String) {
-//    string = "hello"
+simpleEchoFunction("test")
+
+// 1.2 auch Funktionen müssen definieren, wie sie mit nil umgehen wollen
+//simpleEchoFunction(nil) // -> nil als Inout ungültig, da Input Type kein Optional Type
+// korrigieren Input Type zu Optional -> neuer Fehler in Methode
+// füge Unwrapp hinzu -> BadExc
+// fühe Optional als Return Typ hinzu
+
+// 2. Argumente einer Funktion sind const -> Einschränkung von Nebeneffekte (Properties können leider weiterhin geändert werden)
+    //2.1 Beispiel einer normalen Methode (UIView weil Copy by Reference)
+func testConstArgument(view: UIView) {
+//    view = UIView(frame: CGRectMake(0, 0, 20, 40)) // -> es wird eine neue let view definiert in method scope
 }
 
-    //local var gets declared and can be changed -> not visible outside
-func testConst2(var string: String) {
-    string = "hello"
+    //2.2 Argument wird explizit als var angegeben
+func testVarArgument(var view: UIView) {
+    view = UIView(frame: CGRectMake(0, 0, 20, 40))
 }
 
-    //changes can be made and are visible outside
-func testConst3(inout string: String) {
-    string = "hello"
+    //Definition einer UIView als input um Methode zu testen
+var input = UIView(frame: CGRectMake(0, 0, 100, 100))
+
+    //Einschub: zeige Playground Funktion zuerst weiss, dann blau
+input.backgroundColor = UIColor.blueColor() // just to show playground fun -> right side
+    //etwas mehr Playground fun
+for i in 0...255 {
+    input.backgroundColor = UIColor(white: CGFloat(i)/255, alpha: 1)
 }
 
-var input = "Whatever"
-testConst(input)
-println(input)
-testConst2(input)
-println(input)
-//ampersand allows the modification (must be provided for safety)
-testConst3(&input)
-println(input)
+    //back to business (-> Playground Fun löschen)
+testVarArgument(input)
+println(input.frame) // -> frame ist nicht verändert obwohl in methode kleiner -> definierte var ist nur method scope ist also pass by value
 
-//tuple as a return parameter
-func calculateStats(numbers: [Int]) -> (max: Int, min: Int) {
-    var max = numbers[0]
-    var min = numbers[0]
-    
-    for number in numbers {
-        if number > max {
-            max = number
-        }
-        if number < min {
-            min = number
-        }
-    }
-    return (max, min)
+    //Damit changes zurück gehen muss inout angegeben werden (und somit pass by reference ermöglichen)
+func testInOutArgument(inout view: UIView) {
+    view = UIView(frame: CGRectMake(0, 0, 20, 40))
 }
 
-let stats = calculateStats([2,6,4,3,9,0])
-stats.min
-stats.max
+    //Auf der Seite des Aufrufenden muss zusätzlich noch ein Ampersand angegeben werden (da reference)
+testInOutArgument(&input)
+println(input.frame) // -> nun ist input.frame verändert
 
 
-//function as function parameter (with exact function type)
+    //3. Funktionen sind first class citizens in Swift
+// 3.1. Funktion als Parameter einer Funktion (mit exakten Argument und Return Typen)
 func findMatches(numbers: [Int], matcher: (Int -> Bool)) -> [Int] {
     var matches = [Int]()
     for number in numbers {
@@ -63,93 +62,58 @@ func findMatches(numbers: [Int], matcher: (Int -> Bool)) -> [Int] {
     return matches
 }
 
-    //function as input for other function
+    //Input Funktion muss passende Signatur haben
 func canBeDevidedByTwo(number: Int) -> Bool {
     return number % 2 == 0
 }
 
-    //closure as input for other function
-var mySpecialMatcher = {
-    (number: Int) -> Bool in
+    //Test
+var numbers = [1,2,4,4,5,6,9,0]
+findMatches(numbers, canBeDevidedByTwo) // -> Funktion wird über Name referenziert
+
+    //3.2. Statt Funktion kann auch Closure definiert werden -> Zuweisung an Variable
+var isFour = {
+    (number: Int) -> Bool in //definition der Closure, Input und Output abgetrent von Body (in)
     return number == 4
 }
 
-var numbers = [1,2,4,4,5,6,9,0]
+findMatches(numbers, isFour)
 
-findMatches(numbers, canBeDevidedByTwo)
-findMatches(numbers, mySpecialMatcher)
-
-// ?? as a new operator
-var testVar: String? = "Haus"
-println(testVar ?? "nüt")
-
-for i in 1..<5 {
-    println(i)
-}
-
-//array with default value
-var testArray = [Double](count: 5, repeatedValue: 0.2)
-
-//pattern matching
-let somePoint = (1, 0)
-switch somePoint {
-case (0, 0):
-    println("(0, 0) is at the origin")
-case (_, 0):
-    println("(\(somePoint.0), 0) is on the x-axis")
-case (0, _):
-    println("(0, \(somePoint.1)) is on the y-axis")
-case (-2...2, -2...2):
-    println("(\(somePoint.0), \(somePoint.1)) is inside the box")
-default:
-    println("(\(somePoint.0), \(somePoint.1)) is outside of the box")
-    
-    
-}
-
-//function with default param
-func printValue(value: String = "Hello World") {
-    println(value)
-}
-
-printValue()
-
-//CLOSURES
-//closures theorie:
-//name closure -> closing over vars (namensraum einschliessen)
-//functions sind spezialfälle von closures
-// was wir als closure bezeichnen {} ist closure expression
-
+//4. Closures
+//Hier mal etwas Syntax um die einfachheit zu demonstrieren
+    //4.1. simples Beispiel wie oben um zu beginnen, dann schrittweise anpassen
 let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
-let alphabetic = {(s1: String, s2: String) -> Bool in
+
+let alphabeticSort = {(s1: String, s2: String) -> Bool in
     return s1 < s2
 }
-sorted(names, alphabetic)
 
-//functions can be used as closures
-func backwards(s1: String, s2: String) -> Bool {
-    return s1 > s2
-}
-sorted(names, backwards)
+names.sorted(alphabeticSort)
 
-//inline closure:
-sorted(names, {(s1: String, s2: String) -> Bool in
+    //4.2. inline closure von oben
+names.sorted({(s1: String, s2: String) -> Bool in
     return s1 < s2
 })
 
-//now we can make use of type inference (since function argument has defined closure types
-sorted(names, {s1, s2 in
+    //4.3. Typinferenz benutzen (Weil die Sorted Funktion Argumente/Returntyp definiert)
+        //sorted referenz zeigen!
+names.sorted({s1, s2 in
     return s1 < s2
 })
 
-//in single expression we can even omit the return keywork (like in groovy)
-sorted(names, {s1, s2 in s1 < s2})
+    // -> dasselbe klappt gemäss referenz mit jedem array typ (voraussetzung ist operator < für typ)
+let integers = [3,9,6,4]
+integers.sorted({s1, s2 in
+    return s1 < s2
+})
 
-//we can use shorthand arguments
-sorted(names, {$0 < $1})
+    //4.4. Bei Single line Statment kann return weggelassen werden (wie in groovy)
+names.sorted({s1, s2 in s1 < s2})
 
-// and it goes even shorter due to the inference of the < operator (two arguments in row)
-sorted(names, <)
+    //4.5. Statt den Input zu definieren können Shorthand Arguments benutzt werden
+names.sorted({$0 < $1})
 
+    //4.6. Es geht noch kürzer, da < als function in String definiert ist (Typinferenz)
+names.sorted(<)
 
-
+//5. Swift bietet neben sorted auch funktionen wie map, filter an (wie Groovy oder was Java 8 gerne möchte)
