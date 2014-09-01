@@ -25,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4382190719B45B18005B7B71 /* Enums.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Enums.playground; sourceTree = "<group>"; };
 		43EC091719B22535001DA291 /* StringInterpolation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = StringInterpolation.playground; path = Playgrounds/StringInterpolation.playground; sourceTree = "<group>"; };
 		43EC091819B22535001DA291 /* Tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Tuples.playground; path = Playgrounds/Tuples.playground; sourceTree = "<group>"; };
 		43FD783419B3294C00C8B804 /* ClassesAndCo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ClassesAndCo.playground; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 				43FD783619B3659700C8B804 /* Collections.playground */,
 				43FD783719B370D200C8B804 /* Generics.playground */,
 				43FD783819B3C53900C8B804 /* FunctionalProgramming.playground */,
+				4382190719B45B18005B7B71 /* Enums.playground */,
 			);
 			name = Playgrounds;
 			sourceTree = "<group>";

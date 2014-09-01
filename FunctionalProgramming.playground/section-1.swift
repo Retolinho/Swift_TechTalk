@@ -51,7 +51,7 @@ r4
 
 // 2 uncoole sachen:
 // - die notation fuer ein range koennte noch verbessert werden
-// - pow als globale function ist nicht toll
+// - keine Potenzfunktion
 
 extension Range {
     func toArray() -> [T] {
@@ -63,9 +63,6 @@ extension Range {
     }
     func myfilter(f: T -> Bool) -> [T] {
         return self.toArray().myfilter(f)
-    }
-    func mymap<R>(f: T -> R) -> [R] {
-        return self.toArray().mymap(f)
     }
 }
 
