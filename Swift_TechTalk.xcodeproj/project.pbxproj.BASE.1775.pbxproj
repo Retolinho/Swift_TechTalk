@@ -25,19 +25,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-		DA1593DE19B225CA0097F867 /* StringInterpolation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = StringInterpolation.playground; path = Playgrounds/StringInterpolation.playground; sourceTree = "<group>"; };
-		DA1593DF19B225D00097F867 /* Tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Tuples.playground; path = Playgrounds/Tuples.playground; sourceTree = "<group>"; };
-=======
-		4382190719B45B18005B7B71 /* Enums.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Enums.playground; sourceTree = "<group>"; };
-		43EC091719B22535001DA291 /* StringInterpolation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = StringInterpolation.playground; path = Playgrounds/StringInterpolation.playground; sourceTree = "<group>"; };
-		43EC091819B22535001DA291 /* Tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Tuples.playground; path = Playgrounds/Tuples.playground; sourceTree = "<group>"; };
-		43FD783419B3294C00C8B804 /* ClassesAndCo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ClassesAndCo.playground; sourceTree = "<group>"; };
-		43FD783519B3595A00C8B804 /* Extensions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Extensions.playground; sourceTree = "<group>"; };
-		43FD783619B3659700C8B804 /* Collections.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Collections.playground; sourceTree = "<group>"; };
-		43FD783719B370D200C8B804 /* Generics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Generics.playground; sourceTree = "<group>"; };
-		43FD783819B3C53900C8B804 /* FunctionalProgramming.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FunctionalProgramming.playground; sourceTree = "<group>"; };
->>>>>>> ebd3e35b75101d55a7d59f275d2a216df83d439a
 		DA8A9B9219B21A6D0029BFBB /* Swift_TechTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_TechTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8A9B9619B21A6D0029BFBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA8A9B9719B21A6D0029BFBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,21 +115,8 @@
 		DA8A9BB419B21D3F0029BFBB /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				DA1593DF19B225D00097F867 /* Tuples.playground */,
-				DA1593DE19B225CA0097F867 /* StringInterpolation.playground */,
-=======
-				43EC091719B22535001DA291 /* StringInterpolation.playground */,
-				43EC091819B22535001DA291 /* Tuples.playground */,
->>>>>>> ebd3e35b75101d55a7d59f275d2a216df83d439a
 				DA8A9BB519B21D5B0029BFBB /* Functions.playground */,
 				DA8A9BB619B21D5B0029BFBB /* Variables.playground */,
-				43FD783419B3294C00C8B804 /* ClassesAndCo.playground */,
-				43FD783519B3595A00C8B804 /* Extensions.playground */,
-				43FD783619B3659700C8B804 /* Collections.playground */,
-				43FD783719B370D200C8B804 /* Generics.playground */,
-				43FD783819B3C53900C8B804 /* FunctionalProgramming.playground */,
-				4382190719B45B18005B7B71 /* Enums.playground */,
 			);
 			name = Playgrounds;
 			sourceTree = "<group>";

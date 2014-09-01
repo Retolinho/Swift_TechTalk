@@ -2,7 +2,6 @@
 
 
 let name: String = "john"
-
 let age = 24
 
 let txt1 = "How are you \(name)? When did you get \(age * 2) yo?"
