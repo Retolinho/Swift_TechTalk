@@ -9,7 +9,7 @@ import UIKit
 println("Hello world")
 
 // Einschub: coole utf8 constanten/variablen declarationen
-let 🐶 = "hello"
+let 🐨 = "koala"
 let π = 3.14
 
 // 2: Statische Typisierung
@@ -21,15 +21,15 @@ var myString = "some text" //wird aufgelöst anderst als in Skriptsprachen
 //myString = 7 -> myString wird implizit als String definiert
 
     // 2.2: Typinferenz kann und muss manchmal übersteuert werden
-var typeInfered = 6 // -> int
-typeInfered = 8.7
+var a = 6 // -> int
+a = 8.7
 
-var myVar: Double = 6 // -> wenn ich Double will muss ich ihn angeben
-myVar = 8.7
+var b: Double = 6 // -> wenn ich Double will muss ich ihn angeben
+b = 8.7
 
 // 3. Optionals
-var anotherString: String = "test"
-//anotherString = nil // -> nil (null) kann nicht zugewiesen werden bei nicht optional
+var str: String = "test"
+//str = nil // -> nil (null) kann nicht zugewiesen werden bei nicht optional
 //Diskussion: null opt-in statt opt-out bei Java (@NonNull) und enforced by compiler!!!
 
 //Nil ist in Swift "absence of value" kein spezieller Typ -> geht für alle Typen (auch primitive)
@@ -38,31 +38,30 @@ var anotherString: String = "test"
 //  case Some(T)
 //}
 
-var nullableString: String? = nil
-var nullableInt: Int? = nil // -> int i = null ist nicht möglich in java, fehlerfall nicht signalisierbar (zB ErrorCode)
-nullableString = "test"
+var nStr: String? = nil
+var nInt: Int? = nil // -> int i = null ist nicht möglich in java, fehlerfall nicht signalisierbar (zB ErrorCode)
+nStr = "test"
 
     // 3.1 explicit unwrapping
-//nullableString.isEmpty // -> auf optional kann methode oder member nicht aufgerufen werden
+//nStr.isEmpty // -> auf optional kann methode oder member nicht aufgerufen werden
 //da sprache statisch typisiert ist weiss Compiler nicht ob nil/nicht nil, nur dass optional
-if nullableString != nil {
-    nullableString!.isEmpty
+if nStr != nil {
+    nStr!.isEmpty
 }
 
     // 3.2. optional binding als Pattern
-if let mySafeString = nullableString {
-    mySafeString.isEmpty // -> mySafeString ist kein Optional, kann normal benutzt werden
+if let s = nStr {
+    s.isEmpty // -> s ist kein Optional, kann normal benutzt werden
 }
 
     //3.3 realistisches beispiel
-let anyString = "xy"
-var intAsString = anyString.toInt() // ->is infered as optional Int, da toInt Optional returniert
-if let myInt = intAsString {
+let i = "xy"
+var iString = i.toInt() // ->is infered as optional Int, da toInt Optional returniert
+if let myInt = iString {
     println("Sum = \(myInt + 3)")
 }
-// anyString zu 4 wechseln
+// i zu 4 wechseln
 
 //theorie: optionals sind cool, schwer ist zur Zeit noch die Arbeit mit Cocoa Libraries.
 //hier werden noch zu oft optionals returniert -> dann wird es witzlos
-// apple ist aber dran mit jeder beta dies besser anzupassen
-
+// apple ist aber dran mit jeder beta dies besser anzu

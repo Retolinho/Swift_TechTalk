@@ -3,41 +3,41 @@
 import UIKit
 
 // 1 einfache funktion um syntax zu sehen
-func simpleEchoFunction(input: String) -> String {
+func echo(input: String) -> String {
     return input
 }
 
-simpleEchoFunction("test")
+echo("test")
 
 // 1.2 auch Funktionen müssen definieren, wie sie mit nil umgehen wollen
-//simpleEchoFunction(nil) // -> nil als Input ungültig, da Input Type kein Optional Type
+//echo(nil) // -> nil als Input ungültig, da Input Type kein Optional Type
 // korrigieren Input Type zu Optional -> neuer Fehler in Methode
 // füge Unwrapp hinzu -> BadExc
 // fühe Optional als Return Typ hinzu
 
-// 2. Argumente einer Funktion sind const -> Einschränkung von Nebeneffekte (Properties können leider weiterhin geändert werden)
+// 2. Argumente einer Funktion sind const -> Einschränkung von Nebeneffekten (wie Java final)
     //2.1 Beispiel einer normalen Methode (UIView weil Copy by Reference)
-func testConstArgument(view: UIView) {
+func arg(view: UIView) {
 //    view = UIView(frame: CGRectMake(0, 0, 20, 40)) // -> es wird eine neue let view definiert in method scope
 }
 
     //2.2 Argument wird explizit als var angegeben
-func testVarArgument(var view: UIView) {
+func argVar(var view: UIView) {
     view = UIView(frame: CGRectMake(0, 0, 20, 40))
 }
 
     //Definition einer UIView als input um Methode zu testen
 var input = UIView(frame: CGRectMake(0, 0, 100, 100))
-testVarArgument(input)
+argVar(input)
 println(input.frame) // -> frame ist nicht verändert obwohl in methode kleiner -> definierte var ist nur method scope ist also pass by value (wie Java)
 
     //Damit changes zurück gehen muss inout angegeben werden (und somit pass by reference ermöglichen)
-func testInOutArgument(inout view: UIView) {
+func argInOut(inout view: UIView) {
     view = UIView(frame: CGRectMake(0, 0, 20, 40))
 }
 
     //Auf der Seite des Aufrufenden muss zusätzlich noch ein Ampersand angegeben werden (da reference)
-testInOutArgument(&input)
+argInOut(&input)
 println(input.frame) // -> nun ist input.frame verändert
 
 //Einschub: zeige Playground Funktion zuerst weiss, dann blau
