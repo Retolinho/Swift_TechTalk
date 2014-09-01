@@ -9,11 +9,11 @@ extension Array {
     func mymap<R>(f: T -> R) -> [R] {
         var result: [R] = []
         for x in self {
-            let y = f(x)
-            result.append(y)
+            result.append(f(x))
         }
         return result
     }
+
     func myfilter(f: T -> Bool) -> [T] {
         var result: [T] = []
         for x in self {

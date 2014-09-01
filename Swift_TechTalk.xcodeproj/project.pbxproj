@@ -64,9 +64,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4388908419B4C64E002F4B46 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		DA8A9B8919B21A6D0029BFBB = {
 			isa = PBXGroup;
 			children = (
+				4388908419B4C64E002F4B46 /* New Group */,
 				DA8A9BB419B21D3F0029BFBB /* Playgrounds */,
 				DA8A9B9419B21A6D0029BFBB /* Swift_TechTalk */,
 				DA8A9BA719B21A6D0029BFBB /* Swift_TechTalkTests */,
