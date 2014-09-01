@@ -10,7 +10,7 @@ func simpleEchoFunction(input: String) -> String {
 simpleEchoFunction("test")
 
 // 1.2 auch Funktionen müssen definieren, wie sie mit nil umgehen wollen
-//simpleEchoFunction(nil) // -> nil als Inout ungültig, da Input Type kein Optional Type
+//simpleEchoFunction(nil) // -> nil als Input ungültig, da Input Type kein Optional Type
 // korrigieren Input Type zu Optional -> neuer Fehler in Methode
 // füge Unwrapp hinzu -> BadExc
 // fühe Optional als Return Typ hinzu
@@ -28,17 +28,8 @@ func testVarArgument(var view: UIView) {
 
     //Definition einer UIView als input um Methode zu testen
 var input = UIView(frame: CGRectMake(0, 0, 100, 100))
-
-    //Einschub: zeige Playground Funktion zuerst weiss, dann blau
-input.backgroundColor = UIColor.blueColor() // just to show playground fun -> right side
-    //etwas mehr Playground fun
-for i in 0...255 {
-    input.backgroundColor = UIColor(white: CGFloat(i)/255, alpha: 1)
-}
-
-    //back to business (-> Playground Fun löschen)
 testVarArgument(input)
-println(input.frame) // -> frame ist nicht verändert obwohl in methode kleiner -> definierte var ist nur method scope ist also pass by value
+println(input.frame) // -> frame ist nicht verändert obwohl in methode kleiner -> definierte var ist nur method scope ist also pass by value (wie Java)
 
     //Damit changes zurück gehen muss inout angegeben werden (und somit pass by reference ermöglichen)
 func testInOutArgument(inout view: UIView) {
@@ -48,6 +39,13 @@ func testInOutArgument(inout view: UIView) {
     //Auf der Seite des Aufrufenden muss zusätzlich noch ein Ampersand angegeben werden (da reference)
 testInOutArgument(&input)
 println(input.frame) // -> nun ist input.frame verändert
+
+//Einschub: zeige Playground Funktion zuerst weiss, dann blau
+input.backgroundColor = UIColor.blueColor() // just to show playground fun -> right side
+//etwas mehr Playground fun
+for i in 0...255 {
+    input.backgroundColor = UIColor(white: CGFloat(i)/255, alpha: 1)
+}
 
 
     //3. Funktionen sind first class citizens in Swift
@@ -91,15 +89,15 @@ let alphabeticSort = {(s1: String, s2: String) -> Bool in
 names.sorted(alphabeticSort)
 
     //4.2. inline closure von oben
-names.sorted({(s1: String, s2: String) -> Bool in
+names.sorted{(s1: String, s2: String) -> Bool in
     return s1 < s2
-})
+}
 
     //4.3. Typinferenz benutzen (Weil die Sorted Funktion Argumente/Returntyp definiert)
         //sorted referenz zeigen!
-names.sorted({s1, s2 in
+names.sorted{s1, s2 in
     return s1 < s2
-})
+}
 
     // -> dasselbe klappt gemäss referenz mit jedem array typ (voraussetzung ist operator < für typ)
 let integers = [3,9,6,4]
@@ -108,10 +106,10 @@ integers.sorted({s1, s2 in
 })
 
     //4.4. Bei Single line Statment kann return weggelassen werden (wie in groovy)
-names.sorted({s1, s2 in s1 < s2})
+names.sorted{s1, s2 in s1 < s2}
 
     //4.5. Statt den Input zu definieren können Shorthand Arguments benutzt werden
-names.sorted({$0 < $1})
+names.sorted{$0 < $1}
 
     //4.6. Es geht noch kürzer, da < als function in String definiert ist (Typinferenz)
 names.sorted(<)

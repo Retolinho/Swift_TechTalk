@@ -17,37 +17,15 @@ var aString: String = "Hello world"
 //aString = 7 -> kann nicht zugewiesen werden
 
 // 3: Typinferenz
-var myString = "some text"
+var myString = "some text" //wird aufgelöst anderst als in Skriptsprachen
 //myString = 7 -> myString wird implizit als String definiert
 
     // 2.2: Typinferenz kann und muss manchmal übersteuert werden
 var typeInfered = 6 // -> int
 typeInfered = 8.7
 
-var myVar: Float = 6 // -> wenn ich Float will muss ich ihn angeben
-myVar = 7.8
-
-    //2.3: Typinferenz am Beispiel von Arrays und Dictionaries
-var myArray = [5, 6] // -> Array von ints
-//myArray.append("Hello")
-myArray.append(7)
-
-    //leerer Array muss mit Typ angegeben werden
-var myDoubleArray: [Double] = [] // oder myDoubleArray = [Double]()
-myDoubleArray.append(7.6)
-
-var firstObject = myDoubleArray[0] // -> first Object ist infered als Double
-//firstObject = "String" // -> kann kein String zugewiesen werden
-
-    //konstanter array/dict ist immutable
-let myImmutableArray = ["First", "Second"]
-//myImmutableArray.append("Third")
-//myImmutableArray[0] = "Whatever" //-> das würde zB in Java klappen
-
-    //kurz zum playground zeigen -> rechts 2 times erklären
-for value in myImmutableArray {
-    println(value)
-}
+var myVar: Double = 6 // -> wenn ich Double will muss ich ihn angeben
+myVar = 8.7
 
 // 3. Optionals
 var anotherString: String = "test"
