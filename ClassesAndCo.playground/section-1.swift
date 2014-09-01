@@ -62,6 +62,7 @@ animals[0].name
 // static method
 
 class Chiwawa {
+    //class var omgCount = 0
     class func stayInHandbag() -> String {
         return "OMG! I like that!"
     }
