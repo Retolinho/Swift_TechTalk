@@ -2,7 +2,8 @@
 
 import UIKit
 
-// basic class hierarchy
+
+// Protokoll- und Klassendefinition
 
 protocol Animal {
     var name: String { get set }
@@ -59,7 +60,7 @@ animals[0].name
 //animals[0].foo
 
 
-// static method
+// Statische Methoden
 
 class Chiwawa {
     //class var omgCount = 0
@@ -78,9 +79,6 @@ class Bulldog: Dog {
             isHappy = false
         }
     }
-//    override init(name: String) {
-//        super.init(name: name)
-//    }
 }
 
 let b = Bulldog(name: "Toby")

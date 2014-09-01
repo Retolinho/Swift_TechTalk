@@ -2,6 +2,9 @@
 
 import UIKit
 
+
+// Wie koennen wir die Grundfunktionen map, filter, reduce selber implementieren?
+
 extension Array {
     func mymap<R>(f: T -> R) -> [R] {
         var result: [R] = []
@@ -49,8 +52,8 @@ let r4 = [1,2,3,4,5,6,7,8,9,10]
 r4
 
 
-// 2 uncoole sachen:
-// - die notation fuer ein range koennte noch verbessert werden
+// 2 uncoole Sachen:
+// - die notation fuer ein Range koennte noch verbessert werden
 // - keine Potenzfunktion
 
 extension Range {
