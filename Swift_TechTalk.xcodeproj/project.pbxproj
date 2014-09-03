@@ -44,7 +44,6 @@
 		DA8A9BAA19B21A6D0029BFBB /* Swift_TechTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_TechTalkTests.swift; sourceTree = "<group>"; };
 		DA8A9BB519B21D5B0029BFBB /* Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Functions.playground; path = Playgrounds/Functions.playground; sourceTree = "<group>"; };
 		DA8A9BB619B21D5B0029BFBB /* Variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Variables.playground; path = Playgrounds/Variables.playground; sourceTree = "<group>"; };
-		DABE5A9A19B4DA7B006ADDC9 /* TechTalk_1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = TechTalk_1.playground; path = Live_Playgrounds/TechTalk_1.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,18 +64,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4388908419B4C64E002F4B46 /* Live Playgrounds */ = {
-			isa = PBXGroup;
-			children = (
-				DABE5A9A19B4DA7B006ADDC9 /* TechTalk_1.playground */,
-			);
-			name = "Live Playgrounds";
-			sourceTree = "<group>";
-		};
 		DA8A9B8919B21A6D0029BFBB = {
 			isa = PBXGroup;
 			children = (
-				4388908419B4C64E002F4B46 /* Live Playgrounds */,
 				DA8A9BB419B21D3F0029BFBB /* Playgrounds */,
 				DA8A9B9419B21A6D0029BFBB /* Swift_TechTalk */,
 				DA8A9BA719B21A6D0029BFBB /* Swift_TechTalkTests */,
