@@ -7,14 +7,14 @@ import UIKit
 
 extension Int {
     func times(f: () -> ()) {
-        for i in 0..<self {
+        for _ in 0..<self {
             f()
         }
     }
 }
 
 
-5.times{ println("hallo") }
+5.times{ print("hallo") }
 
 
 // extension properties
@@ -35,7 +35,7 @@ let marathon = 42.km + 195.m
 // Missing method on String? No problem, add it
 
 extension String {
-  var length: Int { return countElements(self) }
+  var length: Int { return self.characters.count }
 }
 
 "hallo".length

@@ -6,7 +6,7 @@ import UIKit
 //Unterthemen: Typinferenz, statische Typisierung, Optionals
 
 // 1: Ein kleines Hello World zur Demonstration von Playground und aus Tradition
-println("Hello world")
+print("Hello world")
 
 // Einschub: coole utf8 constanten/variablen declarationen
 let 🐨 = "koala"
@@ -22,7 +22,8 @@ var myString = "some text" //wird aufgelöst anderst als in Skriptsprachen
 
     // 2.2: Typinferenz kann und muss manchmal übersteuert werden
 var a = 6 // -> int
-a = 8.7
+// Fehler, da a vom Typ Int ist
+// a = 8.7
 
 var b: Double = 6 // -> wenn ich Double will muss ich ihn angeben
 b = 8.7
@@ -56,9 +57,9 @@ if let s = nStr {
 
     //3.3 realistisches beispiel
 let i = "xy"
-var iString = i.toInt() // ->is infered as optional Int, da toInt Optional returniert
+var iString = Int(i) // ->is infered as optional Int, da toInt Optional returniert
 if let myInt = iString {
-    println("Sum = \(myInt + 3)")
+    print("Sum = \(myInt + 3)")
 }
 // i zu 4 wechseln
 

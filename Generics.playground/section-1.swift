@@ -8,7 +8,7 @@ import UIKit
 
 // Generics Parameter für Methoden
 
-func print<T: Printable>(t: T) {
+func print<T: CustomStringConvertible>(t: T) {
     print(t.description)
 }
 
@@ -25,7 +25,7 @@ class Stack<T> {
     }
     
     func pop() -> T? {
-        let n = countElements(values)
+        let n = values.count
         if n > 0 {
             let t: T = values[n-1]
             values.removeAtIndex(n-1)
@@ -35,7 +35,7 @@ class Stack<T> {
     }
     
     func isEmpty() -> Bool {
-        return countElements(values) == 0
+        return values.count == 0
     }
 }
 
@@ -44,6 +44,6 @@ let s = Stack<Int>()
 s.push(5)
 s.push(10)
 while (!s.isEmpty()) {
-    println(s.pop())
+    print(s.pop())
 }
 

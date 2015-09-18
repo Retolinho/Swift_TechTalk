@@ -11,7 +11,7 @@ let names = ["john", "helen", "reto"]
 // not allowed
 //names[0] = "alan"
 
-countElements(names[0])
+names[0].characters.count
 // not allowed
 //foobar(names[0])
 
@@ -44,7 +44,6 @@ let entries2: Dictionary<String,Any> = [
     "Elefant": "großes, massiges Säugetier",
     "Giraffe": 5,
 ]
-
 
 
 // mutable

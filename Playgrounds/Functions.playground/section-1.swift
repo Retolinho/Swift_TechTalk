@@ -29,7 +29,7 @@ func argVar(var view: UIView) {
     //Definition einer UIView als input um Methode zu testen
 var input = UIView(frame: CGRectMake(0, 0, 100, 100))
 argVar(input)
-println(input.frame) // -> frame ist nicht verändert obwohl in methode kleiner -> definierte var ist nur method scope ist also pass by value (wie Java)
+print(input.frame) // -> frame ist nicht verändert obwohl in methode kleiner -> definierte var ist nur method scope ist also pass by value (wie Java)
 
     //Damit changes zurück gehen muss inout angegeben werden (und somit pass by reference ermöglichen)
 func argInOut(inout view: UIView) {
@@ -38,7 +38,7 @@ func argInOut(inout view: UIView) {
 
     //Auf der Seite des Aufrufenden muss zusätzlich noch ein Ampersand angegeben werden (da reference)
 argInOut(&input)
-println(input.frame) // -> nun ist input.frame verändert
+print(input.frame) // -> nun ist input.frame verändert
 
 //Einschub: zeige Playground Funktion zuerst weiss, dann blau
 input.backgroundColor = UIColor.blueColor() // just to show playground fun -> right side
@@ -67,7 +67,7 @@ func canBeDevidedByTwo(number: Int) -> Bool {
 
     //Test
 var numbers = [1,2,4,4,5,6,9,0]
-findMatches(numbers, canBeDevidedByTwo) // -> Funktion wird über Name referenziert
+findMatches(numbers, matcher: canBeDevidedByTwo) // -> Funktion wird über Name referenziert
 
     //3.2. Statt Funktion kann auch Closure definiert werden -> Zuweisung an Variable
 var isFour = {
@@ -75,7 +75,7 @@ var isFour = {
     return number == 4
 }
 
-findMatches(numbers, isFour)
+findMatches(numbers, matcher: isFour)
 
 //4. Closures
 //Hier mal etwas Syntax um die einfachheit zu demonstrieren
@@ -86,32 +86,32 @@ let alphabeticSort = {(s1: String, s2: String) -> Bool in
     return s1 < s2
 }
 
-names.sorted(alphabeticSort)
+names.sort(alphabeticSort)
 
     //4.2. inline closure von oben
-names.sorted{(s1: String, s2: String) -> Bool in
+names.sort{(s1: String, s2: String) -> Bool in
     return s1 < s2
 }
 
     //4.3. Typinferenz benutzen (Weil die Sorted Funktion Argumente/Returntyp definiert)
         //sorted referenz zeigen!
-names.sorted{s1, s2 in
+names.sort{s1, s2 in
     return s1 < s2
 }
 
     // -> dasselbe klappt gemäss referenz mit jedem array typ (voraussetzung ist operator < für typ)
 let integers = [3,9,6,4]
-integers.sorted({s1, s2 in
+integers.sort({s1, s2 in
     return s1 < s2
 })
 
     //4.4. Bei Single line Statment kann return weggelassen werden (wie in groovy)
-names.sorted{s1, s2 in s1 < s2}
+names.sort{s1, s2 in s1 < s2}
 
     //4.5. Statt den Input zu definieren können Shorthand Arguments benutzt werden
-names.sorted{$0 < $1}
+names.sort{$0 < $1}
 
     //4.6. Es geht noch kürzer, da < als function in String definiert ist (Typinferenz)
-names.sorted(<)
+names.sort(<)
 
 //5. Swift bietet neben sorted auch funktionen wie map, filter an (wie Groovy oder was Java 8 gerne möchte)
